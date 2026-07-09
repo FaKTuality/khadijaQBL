@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Console — Interactive Question Builder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="top-chrome">
+      <div class="brand"><span class="tally" id="tally"></span> QBL v1</div>
+    </div>
+
+
+
+    <div class="choice-grid">
+
+
+
+      <a class="choice-card" href="quiz.html">
+        <div class="chan-num">CH.02 — RUN</div>
+        <h2>Take the quiz</h2>
+        <p>Go through the questions one at a time, see each response live, then review every choice at the end.</p>
+      </a>
+
+
+    </div>
+
+    <hr class="divider">
+
+  </div>
+
+  <script>
+    // gentle idle blink on the tally light, purely decorative
+    const tally = document.getElementById('tally');
+    setInterval(() => tally.classList.toggle('live'), 2200);
+  </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Submissions — Console</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="top-chrome">
+      <div class="brand"><span class="tally" id="tally"></span> CONSOLE</div>
+      <div style="display:flex; gap:8px;">
+        <a class="nav-link" href="admin.html">Build</a>
+        <a class="nav-link" href="index.html">&larr; Home</a>
+      </div>
+    </div>
+
+    <p class="eyebrow">Ch.03 — Review</p>
+    <h1>Student submissions</h1>
+    <p class="subtitle">Every completed run, with what each student picked per question.</p>
+
+    <div id="filter-row" class="panel" style="display:none; padding:14px 20px;">
+      <label for="student-filter" style="margin:0 0 6px;">Filter by name</label>
+      <input type="text" id="student-filter" placeholder="Start typing a name...">
+    </div>
+
+    <div id="submission-list"></div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="app-submissions.js"></script>
+</body>
+</html>

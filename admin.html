@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Build — Console</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="top-chrome">
+      <div class="brand"><span class="tally" id="tally"></span> CONSOLE</div>
+      <div style="display:flex; gap:8px;">
+        <a class="nav-link" href="submissions.html">View submissions</a>
+        <a class="nav-link" href="index.html">&larr; Home</a>
+      </div>
+    </div>
+
+    <p class="eyebrow">Ch.01 — Build</p>
+    <h1>Set up questions</h1>
+    <p class="subtitle">Each option can be patched to a video, an audio clip, an image, or a text response. Students see that response the moment they click it.</p>
+
+    <div class="panel">
+      <h3 id="form-heading">New question</h3>
+      <input type="hidden" id="editing-id">
+
+      <label for="q-text">Question text</label>
+      <textarea id="q-text" placeholder="e.g. What happens when you call array.map()?"></textarea>
+
+      <label>Options</label>
+      <div id="options-list"></div>
+      <button class="btn-secondary" id="add-option-btn" type="button">+ Add option</button>
+
+      <div class="btn-row">
+        <button class="btn-primary" id="save-btn" type="button">Save question</button>
+        <button class="btn-secondary" id="cancel-edit-btn" type="button" style="display:none;">Cancel edit</button>
+      </div>
+      <p class="status-line" id="form-status"></p>
+    </div>
+
+    <hr class="divider">
+
+    <h3>Questions in this quiz</h3>
+    <div id="question-list"></div>
+
+    <template id="option-row-template">
+      <div class="opt-row" data-opt-row>
+        <div>
+          <label>Option label</label>
+          <input type="text" data-field="label" placeholder="e.g. It creates a new array">
+        </div>
+        <div>
+          <label>Response type</label>
+          <select data-field="type">
+            <option value="text">Text</option>
+            <option value="image">Image</option>
+            <option value="video">Video</option>
+            <option value="audio">Audio</option>
+          </select>
+        </div>
+        <div>
+          <label data-content-label>Response text</label>
+          <input type="text" data-field="content" placeholder="What the student sees">
+        </div>
+        <div>
+          <button class="btn-danger" data-remove-opt type="button">Remove</button>
+        </div>
+      </div>
+    </template>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="app-admin.js"></script>
+</body>
+</html>
